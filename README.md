@@ -183,3 +183,4 @@ For issues, questions, or contributions, please open an issue on the GitHub repo
 - Smooth animations
 - Mobile responsive design
 
+

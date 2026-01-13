@@ -229,3 +229,4 @@ If you need to access the API from a different domain, you'll need to configure 
 - SQL injection protection is provided by CodeIgniter's Query Builder
 - Input validation should be added based on your requirements
 
+

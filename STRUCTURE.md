@@ -99,3 +99,4 @@ The module requires these external components (not included):
 - User authentication system (your application)
 - Database (MySQL/MariaDB)
 
+

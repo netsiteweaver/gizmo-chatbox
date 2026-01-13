@@ -111,3 +111,4 @@ Add to your layout file (before `</body>`):
 
 **That's it!** Your chat module should now be working. Enjoy! 🎉
 
+

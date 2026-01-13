@@ -107,3 +107,4 @@ Ready for GitHub/GitLab:
 3. **Composer** (future): Package manager integration
 4. **Direct Copy**: Manual file copying
 
+

@@ -338,3 +338,4 @@ To add multi-language support:
 - Consider implementing caching
 - Reduce auto-refresh intervals if needed
 
+
