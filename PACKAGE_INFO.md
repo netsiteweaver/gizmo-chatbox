@@ -18,7 +18,7 @@ A complete, production-ready chat module for CodeIgniter applications.
 - **Total Files**: 15+ files
 - **Lines of Code**: ~2,500+ lines
 - **Languages**: PHP, JavaScript, CSS, SQL
-- **Dependencies**: CodeIgniter 3.x, jQuery, Font Awesome
+- **Dependencies**: CodeIgniter 3.x + HMVC, jQuery, Font Awesome
 - **License**: MIT (Open Source)
 
 ## Installation Complexity
@@ -104,7 +104,7 @@ Ready for GitHub/GitLab:
 
 1. **GitHub/GitLab**: Direct repository clone
 2. **ZIP Archive**: Download and extract
-3. **Composer** (future): Package manager integration
+3. **Composer**: Packagist package (HMVC module)
 4. **Direct Copy**: Manual file copying
 
 

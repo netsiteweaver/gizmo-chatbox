@@ -68,25 +68,27 @@ gizmo-chat-module/
 
 ## Installation Location
 
-After installation, files should be placed in your CodeIgniter application:
+After installation, the module should be located in your CodeIgniter application:
 
 ```
 your-codeigniter-app/
 ├── application/
-│   ├── controllers/
-│   │   ├── Chat.php
-│   │   └── api/
-│   │       └── Chat.php
-│   ├── models/
-│   │   └── Chat_model.php
-│   ├── views/
-│   │   └── chat/
-│   │       ├── widget.php
-│   │       ├── listing.php
-│   │       └── conversation.php
-│   └── migrations/
-│       ├── 20260113102400_ChatMessages.php
-│       └── 20260113110000_UpdateChatMessagesForUsers.php
+│   └── modules/
+│       └── chat/
+│           ├── controllers/
+│           │   ├── Chat.php
+│           │   └── api/
+│           │       └── Chat.php
+│           ├── models/
+│           │   └── Chat_model.php
+│           ├── views/
+│           │   └── chat/
+│           │       ├── widget.php
+│           │       ├── listing.php
+│           │       └── conversation.php
+│           └── migrations/
+│               ├── 20260113102400_ChatMessages.php
+│               └── 20260113110000_UpdateChatMessagesForUsers.php
 ```
 
 ## Dependencies

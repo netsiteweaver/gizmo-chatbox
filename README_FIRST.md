@@ -54,6 +54,8 @@ gizmo-chat-module/
 └── Documentation files (*.md)
 ```
 
+When installed via Composer, the module is placed in `application/modules/chat/`.
+
 ## ✅ Quick Checklist
 
 Before you start:

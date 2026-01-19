@@ -6,23 +6,24 @@ Get the Gizmo Chat Module up and running in 5 minutes!
 
 Before starting, ensure you have:
 - ✅ CodeIgniter 3.x application
+- ✅ Modular Extensions (HMVC) enabled
 - ✅ User authentication system with `users` table
 - ✅ Database access
 - ✅ PHP 7.4+
 
 ## Installation Steps
 
-### 1. Copy Files (2 minutes)
+### 1. Install via Composer (1 minute)
 
 ```bash
-# Navigate to your CodeIgniter application root
-cd /path/to/your/codeigniter-app
+composer require netsiteweaver/gizmo-chat-module
+```
 
-# Copy module files
-cp -r gizmo-chat-module/controllers/* application/controllers/
-cp -r gizmo-chat-module/models/* application/models/
-cp -r gizmo-chat-module/views/* application/views/
-cp gizmo-chat-module/migrations/*.php application/migrations/
+Composer installs the module to `application/modules/chat/`.
+If Composer prompts about plugins, allow `composer/installers`:
+
+```bash
+composer config allow-plugins.composer/installers true
 ```
 
 ### 2. Run Migrations (1 minute)
