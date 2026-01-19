@@ -20,6 +20,7 @@ A feature-rich, real-time chat module for CodeIgniter applications with a modern
 ## Requirements
 
 - CodeIgniter 3.x
+- Modular Extensions (HMVC) for CodeIgniter 3.x
 - PHP 7.4 or higher
 - MySQL/MariaDB
 - jQuery (included in most CodeIgniter admin templates)
@@ -29,20 +30,30 @@ A feature-rich, real-time chat module for CodeIgniter applications with a modern
 
 ### 1. Installation
 
-Copy the module files to your CodeIgniter application:
+Install the module via Composer (recommended):
 
 ```bash
-# Copy controllers
-cp -r gizmo-chat-module/controllers/* application/controllers/
+composer require netsiteweaver/gizmo-chat-module
+```
 
-# Copy models
-cp -r gizmo-chat-module/models/* application/models/
+Composer will install the module to `application/modules/chat/`.
+If Composer prompts about plugins, allow `composer/installers`:
 
-# Copy views
-cp -r gizmo-chat-module/views/* application/views/
+```bash
+composer config allow-plugins.composer/installers true
+```
 
-# Copy migrations
-cp -r gizmo-chat-module/migrations/* application/migrations/
+Manual install (no Composer):
+
+```bash
+# Create the module directory
+mkdir -p application/modules/chat
+
+# Copy module contents
+cp -r gizmo-chat-module/controllers application/modules/chat/
+cp -r gizmo-chat-module/models application/modules/chat/
+cp -r gizmo-chat-module/views application/modules/chat/
+cp -r gizmo-chat-module/migrations application/modules/chat/
 ```
 
 ### 2. Database Setup
@@ -122,7 +133,7 @@ This module requires:
 The widget uses a Gizmo logo image. To change it:
 
 1. Replace the logo at: `assets/images/Gizmo-150x48px.png`
-2. Or update the path in `application/views/chat/widget.php` line 315
+2. Or update the path in `application/modules/chat/views/chat/widget.php` line 315
 
 ### Styling
 
@@ -134,7 +145,7 @@ All styles are included inline in the widget view file. You can customize:
 
 ### Version Display
 
-To change the version text, edit `application/views/chat/widget.php` line 352:
+To change the version text, edit `application/modules/chat/views/chat/widget.php` line 352:
 
 ```php
 <div style="text-align: center; font-size: 11px; color: #999; margin-top: 5px;">

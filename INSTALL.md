@@ -7,9 +7,10 @@ This guide will walk you through installing the Gizmo Chat Module in your CodeIg
 Before installing, ensure you have:
 
 1. **CodeIgniter 3.x** installed and configured
-2. **PHP 7.4+** with MySQL/MariaDB extension
-3. **Database** access with CREATE TABLE permissions
-4. **User Authentication System** - Your app must have:
+2. **Modular Extensions (HMVC)** enabled for CodeIgniter 3.x
+3. **PHP 7.4+** with MySQL/MariaDB extension
+4. **Database** access with CREATE TABLE permissions
+5. **User Authentication System** - Your app must have:
    - A `users` table with columns: `id`, `name`, `email`
    - Session-based authentication
    - `$_SESSION['user_id']` set when user is logged in
@@ -17,17 +18,30 @@ Before installing, ensure you have:
 
 ## Step-by-Step Installation
 
-### Step 1: Copy Module Files
+### Step 1: Install the Module (Composer Recommended)
 
-Copy the module files to your CodeIgniter application structure:
+Install via Composer:
+
+```bash
+composer require netsiteweaver/gizmo-chat-module
+```
+
+Composer installs the module to `application/modules/chat/`.
+If Composer prompts about plugins, allow `composer/installers`:
+
+```bash
+composer config allow-plugins.composer/installers true
+```
+
+Manual install (no Composer):
 
 ```bash
 # From the module directory
-cp controllers/Chat.php /path/to/your/application/controllers/
-cp controllers/api/Chat.php /path/to/your/application/controllers/api/
-cp models/Chat_model.php /path/to/your/application/models/
-cp -r views/chat /path/to/your/application/views/
-cp migrations/*.php /path/to/your/application/migrations/
+mkdir -p /path/to/your/application/modules/chat
+cp -r controllers /path/to/your/application/modules/chat/
+cp -r models /path/to/your/application/modules/chat/
+cp -r views /path/to/your/application/modules/chat/
+cp -r migrations /path/to/your/application/modules/chat/
 ```
 
 ### Step 2: Database Setup
@@ -81,6 +95,7 @@ The Chat controller extends `MY_Controller`. Ensure your base controller:
 - Sets up session data
 - Loads common models
 - Handles authentication
+- Extends `MX_Controller` (or a controller that does)
 
 If your base controller is different, update `Chat.php` to extend your base controller.
 
@@ -134,13 +149,13 @@ Or if your layout uses a different structure:
 
 If you want to customize the Gizmo logo:
 1. Add your logo to `assets/images/Gizmo-150x48px.png`
-2. Or update the image path in `application/views/chat/widget.php` line 315
+2. Or update the image path in `application/modules/chat/views/chat/widget.php` line 315
 
 ### Step 8: Configure Notification Sound (Optional)
 
 The widget plays a notification sound. Ensure you have:
 - Audio file at: `assets/audio/notify-bell.wav`
-- Or update the path in `application/views/chat/widget.php`
+- Or update the path in `application/modules/chat/views/chat/widget.php`
 
 ### Step 9: Test Installation
 

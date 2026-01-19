@@ -54,7 +54,7 @@ CREATE TABLE `chat_messages` (
 
 ### Widget Position
 
-To change the widget position, edit CSS in `application/views/chat/widget.php`:
+To change the widget position, edit CSS in `application/modules/chat/views/chat/widget.php`:
 
 ```css
 #chat-widget {
@@ -134,7 +134,7 @@ Change the logo image:
 
 Customize the version text at the bottom:
 
-Edit `application/views/chat/widget.php` line 352:
+Edit `application/modules/chat/views/chat/widget.php` line 352:
 ```php
 <div style="text-align: center; font-size: 11px; color: #999; margin-top: 5px;">
     Your Custom Text Here
@@ -202,7 +202,7 @@ this.notificationCheckInterval = setInterval(function() {
 
 The Chat controller extends `MY_Controller`. If your base controller is different:
 
-1. Update `application/controllers/Chat.php`:
+1. Update `application/modules/chat/controllers/Chat.php`:
    ```php
    class Chat extends YourBaseController  // Change this
    ```
@@ -211,6 +211,7 @@ The Chat controller extends `MY_Controller`. If your base controller is differen
    - Handles authentication
    - Loads common models
    - Sets up session data
+   - Extends `MX_Controller` (or a controller that does)
 
 ### User Model
 
@@ -218,8 +219,8 @@ The module expects a `Users_model` with:
 - `getById($id)` method returning user object with `id`, `name`, `email`
 
 If your user model is different, update:
-- `application/controllers/Chat.php`
-- `application/models/Chat_model.php`
+- `application/modules/chat/controllers/Chat.php`
+- `application/modules/chat/models/Chat_model.php`
 
 ### System Model
 
